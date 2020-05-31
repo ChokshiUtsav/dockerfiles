@@ -1,0 +1,41 @@
+k9s:
+  refreshRate: 2
+  headless: false
+  readOnly: false
+  noIcons: false
+  logger:
+    tail: 200
+    buffer: 500
+    sinceSeconds: 900
+    fullScreenLogs: false
+    textWrap: false
+    showTime: true
+  currentContext: dev
+  currentCluster: dev
+  clusters:
+    dev:
+      namespace:
+        active: amazon-cloudwatch
+        favorites:
+        - amazon-cloudwatch
+        - default
+      view:
+        active: context
+      featureGates:
+        nodeShell: false
+    staging:
+      namespace:
+        active: default
+        favorites:
+        - default
+      view:
+        active: context
+      featureGates:
+        nodeShell: false
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
