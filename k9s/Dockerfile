@@ -11,4 +11,6 @@ RUN mkdir -p /root/.k9s
 
 COPY skins/* /root/.k9s/
 
+RUN  export TERM=xterm-256color
+
 ENTRYPOINT [ "/bin/k9s" ]
